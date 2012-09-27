@@ -1,0 +1,42 @@
+<li>
+  <h2><span class="daynum"><%= i+1 %></span> <%= day['On'] %> <span class="summary"><%= summary(day) %></span></h2>
+  <p class="miles"><span class="start"><%= start(day) %></span><span class="mileage"><%= mileage(day) %></span><span class="finish"><%= finish(day) %></span></p>
+  <% if layover?(day) %>
+  <h3 class="event">Spend the day at:</h3>
+  <p class="event"><%= day['Put in at'] %></p>
+  <% end %>
+  <% if breakfast?(day) %>
+  <h3 class="meal">Breakfast</h3>
+  <ul>
+  <%= breakfast(day) %>
+  </ul>
+  <% end %>
+  <% unless layover?(day) %>
+  <h3 class="event">Put in at:</h3>
+  <p class="event"><%= day['Put in at'] %></p>
+  <% end %>
+  <% if midway_hike?(day) %>
+  <h3 class="event">Midway hike:</h3>
+  <p class="event"><%= day['Midway hike?'] %></p>
+  <% end %>
+  <% if lunch?(day) %>
+  <h3 class="meal">Lunch</h3>
+  <ul>
+  <%= lunch(day) %>
+  </ul>
+  <% end %>
+  <% unless layover?(day) %>
+  <h3 class="event">Take out at:</h3>
+  <p class="event"><%= day['Take out at'] %></p>
+  <% end %>
+  <% if endpoint_hike?(day) %>
+  <h3 class="event">Endpoint hike:</h3>
+  <p class="event"><%= day['Endpoint hike?'] %></p>
+  <% end %>
+  <% if dinner?(day) %>
+  <h3 class="meal">Dinner</h3>
+  <ul>
+  <%= dinner(day) %>
+  </ul>
+  <% end %>
+</li>

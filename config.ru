@@ -1,0 +1,2 @@
+require './canyon'
+run CanyonApp
