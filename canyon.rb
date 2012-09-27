@@ -46,8 +46,12 @@ class CanyonApp < Sinatra::Base
       day['Mile #'].to_f
     end
     def summary(day)
-      s = "#{day['Put in at']} to #{day['Take out at']}"
-      s += " via #{[day['Midway hike?'], day['Endpoint hike?']].select(&:present?).to_sentence}" if hike?(day)
+      if layover?(day)
+        s = "#{day['Put in at']} layover"
+      else
+        s = "#{day['Put in at']} to #{day['Take out at']}"
+      end
+      s += " hiking #{[day['Midway hike?'], day['Endpoint hike?']].select(&:present?).to_sentence}" if hike?(day)
       s
     end
     def hike?(day)
