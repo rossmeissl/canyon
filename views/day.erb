@@ -37,6 +37,8 @@
   <h3 class="meal">Dinner</h3>
   <ul>
   <%= dinner(day) %>
+  <%= erb :li, :locals => { :content => day['Dessert 1'], :klass => 'dessert' } %>
+  <%= erb :li, :locals => { :content => day['Dessert 2'], :klass => 'dessert' } unless day['Dessert 2'] == '' %>
   </ul>
   <% end %>
 </li>

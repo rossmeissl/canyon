@@ -2,5 +2,6 @@
 words = content.split(' ')
 code = words.shift
 meal = words.join(' ')
+klass ||= 'food'
 %>
-<li><%= meal %><span class="code"><%= code %></span></li>
+<li class="<%= klass %>"><%= meal %><span class="code"><%= code %></span></li>
