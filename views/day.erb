@@ -16,7 +16,7 @@
   <p class="event"><%= day['Put in at'] %></p>
   <% end %>
   <% if midway_hike?(day) %>
-  <h3 class="event">Midway hike:</h3>
+  <h3 class="event"><%= 'Midway ' unless layover?(day) %>hike:</h3>
   <p class="event"><%= day['Midway hike?'] %></p>
   <% end %>
   <% if lunch?(day) %>
@@ -30,7 +30,7 @@
   <p class="event"><%= day['Take out at'] %></p>
   <% end %>
   <% if endpoint_hike?(day) %>
-  <h3 class="event">Endpoint hike:</h3>
+  <h3 class="event"><%= 'Endpoint ' unless layover?(day) %>hike:</h3>
   <p class="event"><%= day['Endpoint hike?'] %></p>
   <% end %>
   <% if dinner?(day) %>
