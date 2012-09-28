@@ -128,7 +128,7 @@ ul li ul li {
   font-size: 14px;
 }
 
-ul li ul li:first-child {
+ul li ul li.food:first-child, ul li ul li.appetizer+li.food {
   font-size: 18px;
 }
 
@@ -137,9 +137,9 @@ ul li ul li .code {
   color: silver;
 }
 
-ul li ul li.food+li.dessert {
+ul li ul li.food+li.dessert, ul li ul li.appetizer+li.food, ul li ul li.food+li.snack {
   border-top: 1px solid #eee;
-  max-width: 400px;
+  display: inline-block;
   margin: 5px 0 0;
   padding: 5px 0 0;
 }

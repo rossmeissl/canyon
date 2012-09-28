@@ -23,6 +23,8 @@
   <h3 class="meal">Lunch</h3>
   <ul>
   <%= lunch(day) %>
+  <%= erb :li, :locals => { :content => day['Snack 1'], :klass => 'snack' } unless day['Snack 1'] == '' %>
+  <%= erb :li, :locals => { :content => day['Snack 2'], :klass => 'snack' } unless day['Snack 2'] == '' %>
   </ul>
   <% end %>
   <% unless layover?(day) %>
@@ -36,8 +38,10 @@
   <% if dinner?(day) %>
   <h3 class="meal">Dinner</h3>
   <ul>
+  <%= erb :li, :locals => { :content => day['Appetizer 1'], :klass => 'appetizer' } unless day['Appetizer 1'] == '' %>
+  <%= erb :li, :locals => { :content => day['Appetizer 2'], :klass => 'appetizer' } unless day['Appetizer 2'] == '' %>
   <%= dinner(day) %>
-  <%= erb :li, :locals => { :content => day['Dessert 1'], :klass => 'dessert' } %>
+  <%= erb :li, :locals => { :content => day['Dessert 1'], :klass => 'dessert' } unless day['Dessert 1'] == '' %>
   <%= erb :li, :locals => { :content => day['Dessert 2'], :klass => 'dessert' } unless day['Dessert 2'] == '' %>
   </ul>
   <% end %>
