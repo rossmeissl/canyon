@@ -157,3 +157,13 @@ ul li ul li.food+li.dessert, ul li ul li.appetizer+li.food, ul li ul li.food+li.
 #meals a {
   color: inherit;
 }
+
+span.mileage {
+  color: gray;
+  font-weight: normal;
+}
+
+span.dhftr {
+  color: silver;
+  font-weight: normal;
+}

@@ -25,9 +25,12 @@ class CanyonApp < Sinatra::Base
       end
     end
     %w(midway endpoint).each do |place|
-      define_method "#{place}_hike?".to_sym do |day|
-        day["#{place.titlecase} hike?"].present?
+      define_method "#{place}_hike?".to_sym do |day, num|
+        day["#{place.titlecase} hike #{num}"].present?
       end
+    end
+    def start_hike?(day)
+      day["Start hike"].present?
     end
     def layover?(day)
       day['Total river mileage'] == "0"

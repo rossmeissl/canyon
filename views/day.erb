@@ -11,13 +11,17 @@
   <%= breakfast(day) %>
   </ul>
   <% end %>
+  <% if start_hike?(day) %>
+  <h3 class="event">Start hike:</h3>
+  <p class="event"><%= day['Start hike'] %> <span class="dhftr">p. <%= day['SH DHFTR page #'] %></span></p>
+  <% end %>
   <% unless layover?(day) %>
   <h3 class="event">Put in at:</h3>
   <p class="event"><%= day['Put in at'] %></p>
   <% end %>
-  <% if midway_hike?(day) %>
-  <h3 class="event"><%= 'Midway ' unless layover?(day) %>hike:</h3>
-  <p class="event"><%= day['Midway hike?'] %></p>
+  <% if midway_hike?(day, 1) %>
+  <h3 class="event">Midway hike<%= ' 1' if midway_hike?(day, 2) %>:</h3>
+  <p class="event"><%= day['Midway hike 1'] %> <span class="mileage">at mile <%= day['MH1 mile'] %></span> <span class="dhftr">p. <%= day['MH1 DHFTR page #'] %></span></p>
   <% end %>
   <% if lunch?(day) %>
   <h3 class="meal">Lunch</h3>
@@ -27,13 +31,21 @@
   <%= erb :li, :locals => { :content => day['Snack 2'], :klass => 'snack' } unless day['Snack 2'] == '' %>
   </ul>
   <% end %>
+  <% if midway_hike?(day, 2) %>
+  <h3 class="event">Midway hike 2:</h3>
+  <p class="event"><%= day['Midway hike 2'] %> <span class="mileage">at mile <%= day['MH2 mile'] %></span> <span class="dhftr">p. <%= day['MH2 DHFTR page #'] %></span></p>
+  <% end %>
   <% unless layover?(day) %>
   <h3 class="event">Take out at:</h3>
   <p class="event"><%= day['Take out at'] %></p>
   <% end %>
-  <% if endpoint_hike?(day) %>
-  <h3 class="event"><%= 'Endpoint ' unless layover?(day) %>hike:</h3>
-  <p class="event"><%= day['Endpoint hike?'] %></p>
+  <% if endpoint_hike?(day, 1) %>
+  <h3 class="event"><%= 'Endpoint ' unless layover?(day) %>hike<%= ' 1' if endpoint_hike?(day, 2) %>:</h3>
+  <p class="event"><%= day['Endpoint hike 1'] %> <span class="mileage">at mile <%= day['EH1 mile'] %></span> <span class="dhftr">p. <%= day['EH1 DHFTR page #'] %></span></p>
+  <% end %>
+  <% if endpoint_hike?(day, 2) %>
+  <h3 class="event"><%= 'Endpoint ' unless layover?(day) %>hike 2:</h3>
+  <p class="event"><%= day['Endpoint hike 2'] %> <span class="mileage">at mile <%= day['EH2 mile'] %></span> <span class="dhftr">p. <%= day['EH2 DHFTR page #'] %></span></p>
   <% end %>
   <% if dinner?(day) %>
   <h3 class="meal">Dinner</h3>
