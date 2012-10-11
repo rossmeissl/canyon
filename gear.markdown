@@ -126,9 +126,9 @@ title: Gear list
 
 ## Phantom gear (all optional)
 
-* *Addresses of friends*
+* **Addresses of friends**
 
-* *Cash for postcards*
+* **Cash for postcards**
 
 ## Provided by our outfitters
 
