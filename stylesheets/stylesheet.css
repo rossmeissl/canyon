@@ -44,4 +44,174 @@ a:focus {
   outline: none;
 }
 
+/************/
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 16px;
+}
+
+h1 a {
+  font-weight: normal;
+  color: blue;
+}
+
+body>ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body>ul>li {
+  border-top: 5px solid black;
+  margin: 0 0 40px;
+  position: relative;
+}
+
+h2 {
+  background: #eee;
+  margin: 0 0 10px;
+  padding: 10px 0;
+  font-size: 16px;
+  overflow: auto;
+}
+
+h2 .daynum {
+  background: gray;
+  color: #eee;
+  padding: 10px 20px;
+}
+
+h2 .summary {
+  color: #aaa;
+}
+
+p.miles {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  margin: 0;
+}
+
+p.miles .start, p.miles .finish {
+  display: inline-block;
+  color: white;
+  font-size: 12px;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+p.miles .start {
+  background: green;
+}
+
+p.miles .finish {
+  background: red;
+}
+
+p.miles .mileage:before {
+  content: "—";
+  color: gray;
+  padding: 0 0 0 10px;
+}
+
+p.miles .mileage:after {
+  color: gray;
+  content: "→";
+  padding: 0 10px 0 0;
+}
+
+h3 {
+  clear: both;
+}
+
+h3.event {
+  float: left;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0 10px 0 0;
+  color: gray;
+}
+
+p.event {
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.event {
+  line-height: 18px;
+}
+
+h3.meal {
+  font-size: 14px;
+  margin: 15px 0 0 0;
+  padding: 15px 0 0 25px;
+  border-top: 1px solid silver;
+}
+
+ul li ul {
+  list-style: none;
+  padding: 0 0 15px 25px;
+  margin: 0 0 15px;
+  border-bottom: 1px solid silver;
+}
+
+p.miles+h3.meal, ul+h3.meal {
+  border-top: none;
+  padding-top: 0;
+}
+
+ul li ul:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+ul li ul li {
+  line-height: 21px;
+  font-size: 14px;
+}
+
+ul li ul li.food:first-child, ul li ul li.appetizer+li.food {
+  font-size: 18px;
+}
+
+ul li ul li .code {
+  padding: 0 0 0 8px;
+  color: silver;
+}
+
+ul li ul li.food+li.dessert, ul li ul li.appetizer+li.food, ul li ul li.food+li.snack {
+  border-top: 1px solid #eee;
+  display: inline-block;
+  margin: 5px 0 0;
+  padding: 5px 0 0;
+}
+
+#meals {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  text-align: 0;
+  margin: 0;
+  font-size: 14px;
+  color: gray;
+}
+
+#meals a {
+  color: inherit;
+}
+
+span.mileage {
+  color: gray;
+  font-weight: normal;
+}
+
+span.dhftr {
+  color: silver;
+  font-weight: normal;
+}

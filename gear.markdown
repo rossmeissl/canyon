@@ -1,5 +1,6 @@
 ---
 title: Gear list
+layout: default
 ---
 
 # Personal gear packing list
