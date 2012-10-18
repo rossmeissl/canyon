@@ -25,3 +25,11 @@ h2 {
 body ul {
   list-style: square;
 }
+
+span.price {
+  color: gray;
+}
+
+span.price:before {
+  content: '$';
+}
