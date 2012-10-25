@@ -35,7 +35,7 @@ layout: default
 
 * **Shirt** for hiking, not cotton
 
-* **Pants**, not cotton, to wear in camp
+* **Pants and shirt(s)**, not cotton, to wear in camp
 
 * **Down jacket**, an all-purpose warmer-upper
 
