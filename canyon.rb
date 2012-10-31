@@ -60,5 +60,8 @@ class CanyonApp < Sinatra::Base
     def hike?(day)
       day['Midway hike?'].present? || day['Endpoint hike?'].present?
     end
+    def cooks(day)
+      day.slice(*(1..3).map { |n| "Cook #{n}" }).values.to_sentence
+    end
   end
 end

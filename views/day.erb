@@ -1,6 +1,7 @@
 <li>
   <h2><span class="daynum"><%= i+1 %></span> <%= day['On'] %> <span class="summary"><%= summary(day) %></span></h2>
   <p class="miles"><span class="start"><%= start(day) %></span><span class="mileage"><%= mileage(day) %></span><span class="finish"><%= finish(day) %></span></p>
+  <p class="cooks"><strong>Today's cooks:</strong> <%= cooks(day) %></p>
   <% if layover?(day) %>
   <h3 class="event">Spend the day at:</h3>
   <p class="event"><%= day['Put in at'] %></p>
